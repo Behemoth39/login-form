@@ -9,8 +9,8 @@ const app = {
   createBtn: document.getElementById("create-btn"),
   errorMsgUser: document.getElementById("error-msg-login"),
   errorMsgCreate: document.getElementById("error-msg-create"),
-  savedUsername: new Array(3), //savedUsername: [],
-  savedPassword: new Array(3)  //savedPassword: []
+  savedUsername: [],    //savedUsername: new Array(3), 
+  savedPassword: []     //savedPassword: new Array(3)  
 };
 
 function errorMsg() {
@@ -61,8 +61,7 @@ document.getElementById("login-btn-up").addEventListener("click", (e) => {
   removeSignInUP();
 });
 
-function adduser() {
-  // <= remove when done
+function adduser() { // <= remove when done, used to see saved pass and user  
   let saved1 = app.savedUsername.map((user) => `<li>${user}</li>`).join("\n");
   document.querySelector("#ulus").innerHTML = saved1;
   let saved2 = app.savedPassword.map((user) => `<li>${user}</li>`).join("\n");
