@@ -47,7 +47,7 @@ document.getElementById("login-btn-in").addEventListener("click", (e) => {
 
   for (let i = 0; i < Array.length; i++) {
     if (username == app.savedUsername[i] && password == app.savedPassword[i]) {
-      window.location = "main.htm";
+      window.location = "main.html";
       break;
     } else {
       errorMsg();
