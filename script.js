@@ -47,7 +47,7 @@ document.getElementById("login-btn-in").addEventListener("click", (e) => {
 
   for (let i = 0; i < app.savedUsername.length; i++) {
     if (username == app.savedUsername[i] && password == app.savedPassword[i]) {
-      window.location = "main.html";      
+      window.location = "main.html";           
     } else {
       errorMsg();      
     }
@@ -59,7 +59,7 @@ document.getElementById("login-btn-up").addEventListener("click", (e) => {
   removeSignInUP();
 });
 
-/*function adduser() { // <= remove when done, used to see saved pass and user  
+/*function adduser() { // <= remove when done, used to see saved password and usernamne  
   let saved1 = app.savedUsername.map((user) => `<li>${user}</li>`).join("\n");
   document.querySelector("#ulus").innerHTML = saved1;
   let saved2 = app.savedPassword.map((user) => `<li>${user}</li>`).join("\n");
@@ -85,3 +85,17 @@ document.getElementById("create-btn").addEventListener("click", (e) => {
     addSignInUP();
   }
 });
+
+
+/* save locally instead
+  
+ localStorage.setItem('username'); //save in array 
+ localStorage.setItem('password'); //save in array 
+
+let saveduser =  localStorage.setItem('username');
+let savedpass =  localStorage.setItem('password');
+
+localStorage.removeItem('password');
+localStorage.clear;
+  
+ */
