@@ -9,8 +9,8 @@ const app = {
   createBtn: document.getElementById("create-btn"),
   errorMsgUser: document.getElementById("error-msg-login"),
   errorMsgCreate: document.getElementById("error-msg-create"),
-  savedUsername: [],    //savedUsername: new Array(3), 
-  savedPassword: []     //savedPassword: new Array(3)  
+  savedUsername: [],    
+  savedPassword: []     
 };
 
 function errorMsg() {
@@ -45,13 +45,11 @@ document.getElementById("login-btn-in").addEventListener("click", (e) => {
   username = app.loginForm.user.value;
   password = app.loginForm.pass.value;
 
-  for (let i = 0; i < Array.length; i++) {
+  for (let i = 0; i < app.savedUsername.length; i++) {
     if (username == app.savedUsername[i] && password == app.savedPassword[i]) {
-      window.location = "main.html";
-      break;
+      window.location = "main.html";      
     } else {
-      errorMsg();
-      break;
+      errorMsg();      
     }
   }
 });
@@ -61,12 +59,12 @@ document.getElementById("login-btn-up").addEventListener("click", (e) => {
   removeSignInUP();
 });
 
-function adduser() { // <= remove when done, used to see saved pass and user  
+/*function adduser() { // <= remove when done, used to see saved pass and user  
   let saved1 = app.savedUsername.map((user) => `<li>${user}</li>`).join("\n");
   document.querySelector("#ulus").innerHTML = saved1;
   let saved2 = app.savedPassword.map((user) => `<li>${user}</li>`).join("\n");
   document.querySelector("#ulpa").innerHTML = saved2;
-}
+}*/
 
 document.getElementById("create-btn").addEventListener("click", (e) => {
   e.preventDefault;
@@ -83,7 +81,7 @@ document.getElementById("create-btn").addEventListener("click", (e) => {
     app.savedPassword.push(app.loginForm.pass.value);
     app.loginForm.user.value = null;
     app.loginForm.pass.value = null;
-    adduser(); // <= remove when done
+    //adduser(); // <= remove when done
     addSignInUP();
   }
 });
